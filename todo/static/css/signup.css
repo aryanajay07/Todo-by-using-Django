@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup-login {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.signup-box {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.heading {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.line {
+    height: 2px;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    margin: 20px 0;
+}
+
+.field {
+    margin-bottom: 25px;
+}
+
+.field b {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 14px;
+}
+
+.input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.input:focus {
+    border-color: #667eea;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.submit-button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.submit-button:hover {
+    transform: translateY(-2px);
+}
+
+.field:last-child {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.field:last-child b {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.anc {
+    display: inline-block;
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 20px;
+    border: 2px solid #667eea;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.anc:hover {
+    background: #667eea;
+    color: white;
+}
+
+@media (max-width: 480px) {
+    .signup-box {
+        padding: 30px 20px;
+    }
+
+    .signup-login {
+        padding: 10px;
+    }
+}
+
+.messages {
+    margin-bottom: 20px;
+}
+
+.message {
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.error {
+    background-color: #fee2e2;
+    border: 1px solid #fecaca;
+    color: #dc2626;
+}
+
+.success {
+    background-color: #dcfce7;
+    border: 1px solid #bbf7d0;
+    color: #16a34a;
+}

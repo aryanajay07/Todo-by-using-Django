@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+</head>
+<body>
+     <div class="signup-login">
+        <div class="signup-box">
+            <form method="post">
+                {% csrf_token %}
+                <div class="heading">
+                    Signup
+                </div>
+                <div class="line"></div>
+                
+                {% if messages %}
+                <div class="messages">
+                    {% for message in messages %}
+                        <div class="message {% if message.tags %}{{ message.tags }}{% endif %}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                
+                <div class="field">
+                    <b>Username</b>
+                    <input type="text" required class="input" placeholder="Enter Your Username" name="fnm">
+                </div>
+                <div class="field">
+                    <b>Email</b>
+                    <input type="email" required class="input" name="email">
+                </div>
+                <div class="field">
+                    <b>Password</b>
+                    <input type="password" required class="input" placeholder="Enter Your password" name="pwd">
+                </div>
+                <div class="field">
+                    <input type="submit" class="submit-button" value="Signup">
+                </div>
+            </form>
+            <div class="field">
+                <b>Already have an account</b>
+                <br>
+                <a href="/login" class="anc"></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
