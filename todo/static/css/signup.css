@@ -40,6 +40,30 @@ body {
     margin: 20px 0;
 }
 
+.messages {
+    margin-bottom: 20px;
+}
+
+.message {
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.error {
+    background-color: #fee2e2;
+    border: 1px solid #fecaca;
+    color: #dc2626;
+}
+
+.success {
+    background-color: #dcfce7;
+    border: 1px solid #bbf7d0;
+    color: #16a34a;
+}
+
 .field {
     margin-bottom: 25px;
 }
@@ -86,11 +110,13 @@ body {
 .field:last-child {
     text-align: center;
     margin-top: 20px;
+    margin-bottom: 0;
 }
 
 .field:last-child b {
     color: #666;
     margin-bottom: 10px;
+    display: inline-block;
 }
 
 .anc {
@@ -102,6 +128,8 @@ body {
     border: 2px solid #667eea;
     border-radius: 6px;
     transition: all 0.3s ease;
+    margin-top: 10px;
+    min-width: 100px;
 }
 
 .anc:hover {
@@ -117,28 +145,4 @@ body {
     .signup-login {
         padding: 10px;
     }
-}
-
-.messages {
-    margin-bottom: 20px;
-}
-
-.message {
-    padding: 12px;
-    border-radius: 6px;
-    margin-bottom: 10px;
-    font-size: 14px;
-    text-align: center;
-}
-
-.error {
-    background-color: #fee2e2;
-    border: 1px solid #fecaca;
-    color: #dc2626;
-}
-
-.success {
-    background-color: #dcfce7;
-    border: 1px solid #bbf7d0;
-    color: #16a34a;
 }

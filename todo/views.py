@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect, get_object_or_404
 from django.contrib.auth.models import User
 from todo import models
 from todo.models import TODOO
@@ -83,3 +83,19 @@ def delete_todo(request, todo_id):
     except TODOO.DoesNotExist:
         messages.error(request, 'Todo not found!')
     return redirect('todo')
+
+@login_required(login_url='login')
+def edit_todo(request, todo_id):
+    todo = get_object_or_404(TODOO, srno=todo_id, users=request.user)
+    
+    if request.method == "POST":
+        new_title = request.POST.get('title')
+        if new_title:
+            todo.title = new_title
+            todo.save()
+            messages.success(request, 'Todo updated successfully!')
+            return redirect('todo')
+        else:
+            messages.error(request, 'Title cannot be empty!')
+            
+    return render(request, 'edit_todo.html', {'todo': todo})

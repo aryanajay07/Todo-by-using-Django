@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Todo</title>
+    <link rel="stylesheet" href="{% static 'css/todo.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="todo-container">
+            <div class="heading">Edit Todo</div>
+            <div class="line"></div>
+
+            {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <div class="message {% if message.tags %}{{ message.tags }}{% endif %}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <form method="post" class="add-todo-form">
+                {% csrf_token %}
+                <input type="text" name="title" required class="todo-input" value="{{ todo.title }}" maxlength="200">
+                <div class="edit-buttons">
+                    <button type="submit" class="submit-button">Save</button>
+                    <a href="{% url 'todo' %}" class="cancel-button">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html> 

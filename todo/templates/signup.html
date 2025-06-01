@@ -33,11 +33,11 @@
                 </div>
                 <div class="field">
                     <b>Email</b>
-                    <input type="email" required class="input" name="email">
+                    <input type="email" required class="input" placeholder="Enter Your Email" name="email">
                 </div>
                 <div class="field">
                     <b>Password</b>
-                    <input type="password" required class="input" placeholder="Enter Your password" name="pwd">
+                    <input type="password" required class="input" placeholder="Enter Your Password" name="pwd">
                 </div>
                 <div class="field">
                     <input type="submit" class="submit-button" value="Signup">
@@ -46,7 +46,7 @@
             <div class="field">
                 <b>Already have an account</b>
                 <br>
-                <a href="/login" class="anc"></a>
+                <a href="{% url 'login' %}" class="anc">Login</a>
             </div>
         </div>
     </div>
